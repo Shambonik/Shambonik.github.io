@@ -1,8 +1,8 @@
-let checkdoxes = [];
+let checkboxes = [];
 let products = [];
 
 function checkedChange(){
-	if(!checkdoxes[0].checked && !checkdoxes[1].checked && !checkdoxes[2].checked && !checkdoxes[3].checked){
+	if(!checkboxes[0].checked && !checkboxes[1].checked && !checkboxes[2].checked && !checkboxes[3].checked){
 		for(let i = 0; i<products.length; i++){
 			products[i].style.visibility = "visible";
 			products[i].style.position = "relative";
@@ -11,7 +11,7 @@ function checkedChange(){
 	}
 	for(let i = 0; i<products.length; i++){
 		if(products[i].classList.contains("milk")){
-			if(checkdoxes[0].checked){
+			if(checkboxes[0].checked){
 				products[i].style.visibility = "visible";
 				products[i].style.position = "relative";
 			}
@@ -21,7 +21,7 @@ function checkedChange(){
 			}
 		}
 		if(products[i].classList.contains("dark")){
-			if(checkdoxes[1].checked){
+			if(checkboxes[1].checked){
 				products[i].style.visibility = "visible";
 				products[i].style.position = "relative";
 			}
@@ -31,7 +31,7 @@ function checkedChange(){
 			}
 		}
 		if(products[i].classList.contains("white")){
-			if(checkdoxes[2].checked){
+			if(checkboxes[2].checked){
 				products[i].style.visibility = "visible";
 				products[i].style.position = "relative";
 			}
@@ -41,7 +41,7 @@ function checkedChange(){
 			}
 		}
 		if(products[i].classList.contains("mix")){
-			if(checkdoxes[3].checked){
+			if(checkboxes[3].checked){
 				products[i].style.visibility = "visible";
 				products[i].style.position = "relative";
 			}
@@ -56,10 +56,10 @@ function checkedChange(){
 
 function checkboxLoad(){
 	products = document.querySelectorAll(".product_item");
-	checkdoxes.push(document.querySelector(".checkbox_type.milk"));
-	checkdoxes.push(document.querySelector(".checkbox_type.dark"));
-	checkdoxes.push(document.querySelector(".checkbox_type.white"));
-	checkdoxes.push(document.querySelector(".checkbox_type.mix"));
+	checkboxes.push(document.querySelector(".checkbox_type.milk"));
+	checkboxes.push(document.querySelector(".checkbox_type.dark"));
+	checkboxes.push(document.querySelector(".checkbox_type.white"));
+	checkboxes.push(document.querySelector(".checkbox_type.mix"));
 }
 
 window.addEventListener("load", checkboxLoad);

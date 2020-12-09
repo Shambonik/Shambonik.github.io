@@ -4,7 +4,9 @@ function animOnScroll(){
 		const animItem = animItems[i];
 		if(!animItem.classList.contains("active_anim")){
 			const animItemHeight = animItem.offsetHeight;
-			const animItemOffset = offset(animItem).top;
+			const rect = animItem.getBoundingClientRect();
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			const animItemOffset = rect.top + scrollTop;
 			const animStart = 6;
 
 			let animItemPoint = window.innerHeight - animItemHeight / animStart;
@@ -21,18 +23,12 @@ function animOnScroll(){
 	}
 }
 
-function offset(el){
-	var rect = el.getBoundingClientRect();
-	const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-	return {top : rect.top + scrollTop, left: rect.left + scrollLeft};
-}
 
-function animetionLoad(){
+function animationLoad(){
 	animItems= document.querySelectorAll('.anim_item');
 }
 
-window.addEventListener("load", animetionLoad);
+window.addEventListener("load", animationLoad);
 window.addEventListener("load", animOnScroll);
 window.addEventListener("scroll", animOnScroll);
 window.addEventListener("resize", animOnScroll);

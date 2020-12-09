@@ -12,9 +12,9 @@ body {
 	width: 100%;
 	background-color: #f2f2f2;
 	font-family: Roboto, Verdana, Arial,Helvetica,sans-serif;
-    -moz-hyphens: none;
-    -webkit-hyphens: none;
-    -ms-hyphens: none;
+    /*-moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;*/
 }
 
 a {
@@ -45,7 +45,7 @@ header{
 	padding-bottom: 4vmax;
 	background-image: url("images/navbar/header_background.png");
 	background-repeat: no-repeat;
-	background-size: 100vmax 120%;
+	background-size: 100vmax 8.5vmax;
 	background-position: 0 -10vmax;
 	align-items: top;
 	color: white;
@@ -56,7 +56,7 @@ header{
 .nav_button{
 	visibility: hidden;
 	cursor: pointer;
-	z-index: 200;
+	z-index: 400;
 	position: fixed;
 	top: 20px;
 	left: 20px;
@@ -82,7 +82,7 @@ header{
 	grid-area: main; 
 }
 .main img{
-	height: 175%;
+	height: 4vmax;
 	width: auto;
 }
 .products { grid-area: products; }
@@ -160,7 +160,7 @@ header{
 	transition: background 0.8s ease-out 0s;
 }
 
-#slider  input + label:hover {
+#slider input + label:hover {
 	background: #ffebbe;
 }
 
@@ -524,6 +524,7 @@ footer p{
 
 	.main img{
 		visibility: hidden;
+		position: absolute;
 	}
 
 	.main:before{
